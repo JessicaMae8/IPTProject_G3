@@ -5,13 +5,13 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Milktea Infomation Management System</title>
+  <title>Milktea Information Management System</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
   <link href="assets\img\milktea logo.png" rel="icon">
-  <link href="assets\img\milktea logo.png" rel="Milktea Log">
+  <link href="assets\img\milktea logo.png" rel="Milktea Logo">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -48,7 +48,7 @@
 
     <div class="d-flex align-items-center justify-content-between">
       <a href="index.php" class="logo d-flex align-items-center">
-        <img src="assets\img\milktea logo.png" alt="SorSU Logo">
+        <img src="assets\img\milktea logo.png" alt="Milktea Logo">
         <span class="d-none d-lg-block">Milktea I.M.S</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -77,17 +77,17 @@ $search = isset($search) ? $search : "";
 
         <li class="nav-item dropdown pe-3">
     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-        <img src="assets\img\g3 logo.png" alt="group9" class="rounded-circle">
+        <img src="assets\img\g3 logo.png" alt="group3" class="rounded-circle">
         <span class="d-none d-md-block dropdown-toggle ps-2">Group 3</span>
     </a>
     <!-- Dropdown Menu -->
     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
         <li class="dropdown-header">
             <h6>Group 3</h6>
-            <span>BsIT 2-5</span>
+            <span>BSIT 2-5</span>
         </li>
         <li>
-            <hr class="dropdown-divider">
+            <hr class="dropdown-divider"> 
         </li>
         <li>
             <hr class="dropdown-divider">
