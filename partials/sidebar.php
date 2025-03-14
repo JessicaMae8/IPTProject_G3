@@ -6,7 +6,7 @@
   <li class="nav-item">
     <a class="nav-link collapsed" href="index.php">
       <i class="bi bi-grid"></i>
-      <span>Milktea</span>
+      <span>Milktea Information</span>
     </a>
   </li>
 
