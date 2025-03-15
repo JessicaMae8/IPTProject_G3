@@ -51,7 +51,7 @@
               <div class="d-flex justify-content-center py-4">
                 <a href="index.html" class="logo d-flex align-items-center w-auto">
                   <img src="assets\img\milktea logo.png" alt="Milktea Logo">
-                  <span class="d-none d-lg-block">Milktea I.M.S/span>
+                  <span class="d-none d-lg-block">Milktea I.M.S</span>
                 </a>
               </div><!-- End Logo -->
 
@@ -105,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div style="position: relative; width: 100%;">
     <input type="password" name="password" id="password" class="form-control" placeholder="Password" required style="width: 100%; padding-right: 40px;">
     <span onclick="togglePassword()" id="toggleIcon" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; font-size: 1.2rem;">
-        👁️ <!-- Eye icon for "Show" -->
+        ✓ <!-- Eye icon for "Show" -->
     </span>
                 <div class="invalid-feedback">Please enter your password!</div>
             </div>
@@ -143,10 +143,10 @@ function togglePassword() {
 
     if (passwordField.type === "password") {
         passwordField.type = "text"; // Show password
-        toggleIcon.textContent = "👁️"; // Replace eye icon with "hide" icon
+        toggleIcon.textContent = "✓"; // Checkmark (visible)
     } else {
         passwordField.type = "password"; // Hide password
-        toggleIcon.textContent = "🙈"; // Replace back with "show" icon
+        toggleIcon.textContent = "✕"; // X (hidden)
     }
 }
 </script>
