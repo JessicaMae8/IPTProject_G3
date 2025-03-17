@@ -26,8 +26,6 @@
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
-  
-
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
@@ -41,30 +39,24 @@
 </head>
 
 <body>
-  
 
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
       <a href="index.php" class="logo d-flex align-items-center">
-        <img src="assets\img\milktea logo.png" alt="Milktea Logo">
+        <img src="assets\img\milktea logo.png" alt="">
         <span class="d-none d-lg-block">Milktea I.M.S</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
-    <?php
-// Ensure the $search variable exists to avoid errors
-$search = isset($search) ? $search : "";
-?>
 
     <div class="search-bar">
-      <form  class="search-form d-flex align-items-center" method="GET" action="index.php">
-        <input type="text" name="search" placeholder="Search." title="Enter search keyword" value="<?php echo htmlspecialchars($search); ?>">
-        <button type="submit"title="Search" ><i class="bi bi-search"></i></button>
+    <form class="search-form d-flex align-items-center" method="GET" action="">
+        <input type="text" name="search" placeholder="Search" value="<?php echo $_GET['search'] ?? ''; ?>">
+        <button type="submit"><i class="bi bi-search"></i></button>
     </form>
-    </form>
-    </div><!-- End Search Bar -->
+</div><!-- End Search Bar -->
 
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
@@ -76,36 +68,39 @@ $search = isset($search) ? $search : "";
         </li><!-- End Search Icon-->
 
         <li class="nav-item dropdown pe-3">
-    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-        <img src="assets\img\g3 logo.png" alt="group3" class="rounded-circle">
-        <span class="d-none d-md-block dropdown-toggle ps-2">Group 3</span>
-    </a>
-    <!-- Dropdown Menu -->
-    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-        <li class="dropdown-header">
-            <h6>Group 3</h6>
-            <span>BSIT 2-5</span>
-        </li>
-        <li>
-            <hr class="dropdown-divider"> 
-        </li>
-        <li>
-            <hr class="dropdown-divider">
-        </li>
-        <li>
-            <a class="dropdown-item d-flex align-items-center" href="logout.php">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="assets\img\account.png" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">Milktea I.M.S</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>Non-Chalant Group</h6>
+              <span>Group - 3</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="login.php">
                 <i class="bi bi-box-arrow-right"></i>
-                <span>Sign Out</span>
-            </a>
-        </li>
-    </ul>
-</li>
-<!-- End Profile Nav -->
+                <span>Log Out</span>
+              </a>
+            </li>
 
-
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
 
       </ul>
     </nav><!-- End Icons Navigation -->
