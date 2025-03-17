@@ -10,7 +10,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/milktea logo.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -57,9 +57,9 @@
 
               <div class="card mb-3">
     <div class="card-body">
-        <div class="pt-4 pb-2">
-            <h5 class="card-title text-center pb-0 fs-4">Create an Account</h5>
-            <p class="text-center small">Please fillup the following to create your personal account</p>
+        <div class="pt-6 pb-4">
+            <h5 class="card-title text-center pb-0 fs-2">Create an Account</h5>
+            <p class="text-center small">Complete you profile by filling in this account creation form.</p>
         </div>
   
         <?php
@@ -85,43 +85,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
         <form  action="register.php"  method="POST">
-            <div class="form-group">
-                <input type="text" name="name" class="form-control" placeholder="Name " required>
+            <div class="pt-6 pb-3 form-group" >
+              <label for="name">Name</label>
+                <input type="text" name="name" class="form-control" placeholder="Name" required>
                 <div class="invalid-feedback">Please enter your name!</div>
             </div>
 
-            <div class="form-group">
-                <input type="email" name="email" class="form-control" placeholder="@Email :" required >
-                <div class="invalid-feedback">Please enter a valid Email adddress!</div>
+            <div class="pt-6 pb-3 form-group">
+            <label for="email">Email</label>
+                <input type="email" name="email" class="form-control" placeholder="Email" required >
+                <div class="invalid-feedback">Please enter a valid Email Address!</div>
             </div>
 
-            <div class="form-group">
+            <div class="pt-6 pb-3 form-group">
+            <label for="username">Username</label>
                 <div class="input-group has-validation">
                     <input type="text" name="username" class="form-control" placeholder="Username" required>
-                    <div class="invalid-feedback">Please make your username.</div>
+                    <div class="invalid-feedback">Please make your username!</div>
                 </div>
             </div>
 
-            <div style="position: relative; width: 100%;">
+            <div style="pt-6 pb-3 position: relative; width: 100%;">
+            <label for="password">Password</label>
     <input type="password" name="password" id="password" class="form-control" placeholder="Password" required style="width: 100%; padding-right: 40px;">
-    <span onclick="togglePassword()" id="toggleIcon" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; font-size: 1.2rem;">
-        ✓ <!-- Eye icon for "Show" -->
+    <span onclick="togglePassword()" id="toggleIcon" style="position: absolute; right: 30px; top: 62%; transform: translateY(-50%); cursor: pointer; font-size: 1.2rem;">
+        ✓ <!-- Checkmark icon for "visible" -->
     </span>
                 <div class="invalid-feedback">Please enter your password!</div>
             </div>
 
             <div class="col-12">
-                <div class="form-check">
+                <div class="pt-4 pb-3 form-check">
                     <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>
-                    <label class="form-check-label" for="acceptTerms">I agree and accept the <a href="database/Register.php">terms and conditions</a></label>
-                    <div class="invalid-feedback">You must agree to the terms before submitting.</div>
+                    <label class="form-check-label" for="acceptTerms" for="privacyPolicy">By creating an account, you agree to Milktea I.M.S <a href="database/Register.php">Terms & Service<a href="database/Register.php"></a> and <a href="database/Register.php">Privacy Policy.</a></label>
+                    <div class="invalid-feedback">You must agree to the terms & condition before submitting.</div>
                 </div>
             </div>
             <div class="col-12">
                 <button class="btn btn-primary w-100" type="submit">Create Account</button>
             </div>
-            <div class="col-12">
-                <p class="small mb-0">Already have an account? <a href="login.php">Log in</a></p>
+            <div class="pt-4 pb-3 col-12">
+                <p class="text-center medium">Already have an account? <a href="login.php">Log in</a></p>
             </div>
         </form>
     </div>
