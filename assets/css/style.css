@@ -15,12 +15,12 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  background: #f6f9ff;
+  background: #E5D1BD;
   color: #444444;
 }
 
 a {
-  color: #4154f1;
+  color: #000000;
   text-decoration: none;
 }
 
@@ -64,7 +64,7 @@ h6 {
   font-size: 24px;
   margin-bottom: 0;
   font-weight: 600;
-  color: #012970;
+  color: #443627;
 }
 
 /*--------------------------------------------------------------
@@ -148,7 +148,7 @@ h6 {
 }
 
 .dropdown-menu .dropdown-item:hover {
-  background-color: #f6f9ff;
+  background-color: #E5D1BD;
 }
 
 @media (min-width: 768px) {
@@ -227,16 +227,16 @@ h6 {
 .card-header,
 .card-footer {
   border-color: #ebeef4;
-  background-color: #fff;
-  color: #798eb3;
+  background-color: #DBC3A8;
+  color: #DBC3A8;
   padding: 15px;
 }
 
 .card-title {
   padding: 20px 0 15px 0;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 500;
-  color: #012970;
+  color: #0A0908;
   font-family: "Poppins", sans-serif;
 }
 
@@ -263,7 +263,7 @@ h6 {
 
 /* Close Button */
 .btn-close {
-  background-size: 25%;
+  background-size: 30%;
 }
 
 .btn-close:focus {
@@ -307,25 +307,25 @@ h6 {
 .breadcrumb {
   font-size: 14px;
   font-family: "Nunito", sans-serif;
-  color: #899bbd;
+  color: #BE986D;
   font-weight: 600;
 }
 
 .breadcrumb a {
-  color: #899bbd;
+  color: #7F5539;
   transition: 0.3s;
 }
 
 .breadcrumb a:hover {
-  color: #51678f;
+  color: #000000;
 }
 
 .breadcrumb .breadcrumb-item::before {
-  color: #899bbd;
+  color: #000000;
 }
 
 .breadcrumb .active {
-  color: #51678f;
+  color: #000000;
   font-weight: 600;
 }
 
@@ -372,7 +372,7 @@ h6 {
 .logo span {
   font-size: 26px;
   font-weight: 700;
-  color: #012970;
+  color: #ffffff;
   font-family: "Nunito", sans-serif;
 }
 
@@ -381,7 +381,7 @@ h6 {
   z-index: 997;
   height: 60px;
   box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
-  background-color: #fff;
+  background-color: #7F5539;
   padding-left: 20px;
   /* Toggle Sidebar Button */
   /* Search Bar */
@@ -391,7 +391,7 @@ h6 {
   font-size: 32px;
   padding-left: 10px;
   cursor: pointer;
-  color: #012970;
+  color: #fefeff;
 }
 
 .header .search-bar {
@@ -428,7 +428,7 @@ h6 {
 .header .search-form input {
   border: 0;
   font-size: 14px;
-  color: #012970;
+  color: #79028b;
   border: 1px solid rgba(1, 41, 112, 0.2);
   padding: 7px 38px 7px 8px;
   border-radius: 3px;
@@ -467,14 +467,14 @@ h6 {
 }
 
 .header-nav .nav-icon {
-  font-size: 22px;
+  font-size: 25px;
   color: #012970;
   margin-right: 25px;
   position: relative;
 }
 
 .header-nav .nav-profile {
-  color: #012970;
+  color: #ffffff;
 }
 
 .header-nav .nav-profile img {
@@ -610,7 +610,7 @@ h6 {
   scrollbar-width: thin;
   scrollbar-color: #aab7cf transparent;
   box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
-  background-color: #fff;
+  background-color: #BE986D;
 }
 
 @media (max-width: 1199px) {
