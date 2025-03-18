@@ -3,18 +3,64 @@
   include('partials/header.php');
   include('partials/sidebar.php');
 
-  $sql = "SELECT * FROM milktea";
+  // Pagination variables
+  $limit = 5; // Number of records per page
+  $page = isset($_GET['page']) ? (int)$_GET['page'] : 1; // Current page
+  $offset = ($page - 1) * $limit; // Offset for SQL query
 
-  if (!empty($_GET['search'])) {
+  // Search functionality
+  $search = "";
+  if (isset($_GET['search'])) {
       $search = $_GET['search'];
-      $sql = "SELECT * FROM milktea WHERE Flavors LIKE '%$search%' OR Sinkers LIKE '%$search%' OR Sizes LIKE '%$search%' OR Price LIKE '%$search%'";
   }
-  
+
+  // Build SQL query with pagination and search functionality
+  if (!empty($search)) {
+      $sql = "SELECT * FROM milktea 
+              WHERE Flavors LIKE '%$search%' 
+              OR Sinkers LIKE '%$search%' 
+              OR Sizes LIKE '%$search%' 
+              OR Price LIKE '%$search%'
+              LIMIT $offset, $limit";
+  } else {
+      $sql = "SELECT * FROM milktea LIMIT $offset, $limit";
+  }
+
+  // Debugging: Print the SQL query
+  echo $sql; // This will help you see the actual query being executed
+
+  // Execute the query
+  $result = $conn->query($sql);
+
+  // Check for errors in the query execution
+  if (!$result) {
+      die("Query failed: " . $conn->error);
+  }
+
+  // Get total records for pagination (with or without search)
+  $total_sql = "SELECT COUNT(*) as total FROM milktea";
+  if (!empty($search)) {
+      $total_sql = "SELECT COUNT(*) as total FROM milktea 
+                    WHERE Flavors LIKE '%$search%' 
+                    OR Sinkers LIKE '%$search%' 
+                    OR Sizes LIKE '%$search%' 
+                    OR Price LIKE '%$search%'";
+  }
+
+  // Get the total number of records
+  $total_result = $conn->query($total_sql);
+  $total_row = $total_result->fetch_assoc();
+  $total_records = $total_row['total'];
+  $total_pages = ceil($total_records / $limit);
+
+  // Get data for milktea
   $milktea = $conn->query($sql);  
+
+  // Handle session status (if any)
   $status = '';
   if (isset($_SESSION['status'])) {
-    $status = $_SESSION['status'];
-    unset($_SESSION['status']);
+      $status = $_SESSION['status'];
+      unset($_SESSION['status']);
   }
 ?>
 
@@ -39,7 +85,7 @@
           <div class="card-body">
             <div class="d-flex justify-content-between">
               <h5 class="card-title">Milktea List</h5>
-              <button class="btn btn-primary btn-sm mt-4 mx-3" data-bs-toggle="modal" data-bs-target="#addFlavorsModal">Add Milktea Flavor</button>
+              <button class="btn btn-primary btn-sm mt-4 mx-3" data-bs-toggle="modal" data-bs-target="#addFlavorsModal">Add Milktea Order</button>
             </div>
 
             <!-- Default Table -->
@@ -64,6 +110,43 @@
                       <td><?php echo $row['Sizes']; ?></td>
                       <td><?php echo $row['Price']; ?></td>
                       <td class="d-flex justify-content-center">
+
+                            <!-- View Button -->
+                            <button class="btn btn-primary btn-sm mx-1" data-bs-toggle="modal" data-bs-target="#ViewModal<?php echo $row['ID']; ?>">View</button>
+
+                            <!-- View Modal -->
+                            <div class="modal fade" id="ViewModal<?php echo $row['ID']; ?>" tabindex="-1" aria-labelledby="ViewModalLabel" aria-hidden="true">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title">View Milktea Details</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                  </div>
+                                  <div class="modal-body">
+                                  <div class="mb-3">
+                                    <label class="form-label">Flavors</label>
+                                    <input type="text" class="form-control" value="<?php echo $row['Flavors']; ?>" disabled>
+                                  </div>
+                                  <div class="mb-3">
+                                    <label class="form-label">Sinkers</label>
+                                    <input type="text" class="form-control" value="<?php echo $row['Sinkers']; ?>" disabled>
+                                  </div>
+                                  <div class="mb-3">
+                                    <label class="form-label">Sizes</label>
+                                    <input type="text" class="form-control" value="<?php echo $row['Sizes']; ?>" disabled>
+                                  </div>
+                                  <div class="mb-3">
+                                    <label class="form-label">Price</label>
+                                    <input type="int" class="form-control" value="<?php echo $row['Price']; ?>" disabled>
+                                  </div>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      
                         <!-- Edit Button -->
                         <button class="btn btn-success btn-sm mx-1" data-bs-toggle="modal" data-bs-target="#editModal<?php echo $row['ID']; ?>">Edit</button>
 
@@ -105,43 +188,6 @@
                         </div>
 
 
-                            <!-- View Button -->
-                            <button class="btn btn-primary btn-sm mx-1" data-bs-toggle="modal" data-bs-target="#ViewModal<?php echo $row['ID']; ?>">View</button>
-
-                            <!-- View Modal -->
-                            <div class="modal fade" id="ViewModal<?php echo $row['ID']; ?>" tabindex="-1" aria-labelledby="ViewModalLabel" aria-hidden="true">
-                              <div class="modal-dialog">
-                                <div class="modal-content">
-                                  <div class="modal-header">
-                                    <h5 class="modal-title">View Milktea Details</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                  </div>
-                                  <div class="modal-body">
-                                  <div class="mb-3">
-                                    <label class="form-label">Flavors</label>
-                                    <input type="text" class="form-control" value="<?php echo $row['Flavors']; ?>" disabled>
-                                  </div>
-                                  <div class="mb-3">
-                                    <label class="form-label">Sinkers</label>
-                                    <input type="text" class="form-control" value="<?php echo $row['Sinkers']; ?>" disabled>
-                                  </div>
-                                  <div class="mb-3">
-                                    <label class="form-label">Sizes</label>
-                                    <input type="text" class="form-control" value="<?php echo $row['Sizes']; ?>" disabled>
-                                  </div>
-                                  <div class="mb-3">
-                                    <label class="form-label">Price</label>
-                                    <input type="int" class="form-control" value="<?php echo $row['Price']; ?>" disabled>
-                                  </div>
-                                  </div>
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-
                         <!-- Delete Button -->
                         <button class="btn btn-danger btn-sm mx-1" data-bs-toggle="modal" data-bs-target="#deleteModal<?php echo $row['ID']; ?>">Delete</button>
 
@@ -151,7 +197,7 @@
                             <div class="modal-content">
                               <div class="modal-body text-center">
                                 <h1 class="text-danger" style="font-size: 50px"><strong>!</strong></h1>
-                                <h5>Are you sure you want to delete this milktea flavor?</h5>
+                                <h5>Are you sure you want to delete this?</h5>
                                 <h6>This action cannot be undone.</h6>
                               </div>
                               <div class="modal-footer d-flex justify-content-center">
@@ -169,7 +215,7 @@
                   <?php endwhile; ?>
                 <?php else: ?>
                   <tr>
-                    <td colspan="6" class="text-center">No milktea found</td>
+                    <td colspan="6" class="text-center">No Milktea List Found</td>
                   </tr>
                 <?php endif; ?>
               </tbody>
@@ -181,6 +227,23 @@
     </div>
   </section>
 
+<!-- Pagination Links -->
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        <li class="page-item <?= ($page <= 1) ? 'disabled' : '' ?>">
+            <a class="page-link" href="?page=<?= $page - 1 ?>&search=<?= urlencode($search) ?>">Previous</a>
+        </li>
+        <?php for ($i = 1; $i <= $total_pages; $i++): ?>
+            <li class="page-item <?= ($i == $page) ? 'active' : '' ?>">
+                <a class="page-link" href="?page=<?= $i ?>&search=<?= urlencode($search) ?>"><?= $i ?></a>
+            </li>
+        <?php endfor; ?>
+        <li class="page-item <?= ($page >= $total_pages) ? 'disabled' : '' ?>">
+            <a class="page-link" href="?page=<?= $page + 1 ?>&search=<?= urlencode($search) ?>">Next</a>
+        </li>
+    </ul>
+</nav>
+
 </main><!-- End #main -->
 
                         <!-- Create (Add Flavors) Modal -->
@@ -189,7 +252,7 @@
                             <form action="database/create.php" method="POST">
                               <div class="modal-content">
                                 <div class="modal-header">
-                                  <h5 class="modal-title">Add Milktea Flavors</h5>
+                                  <h5 class="modal-title">Add Milktea Order</h5>
                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                               </div>
                               <div class="modal-body">
@@ -219,20 +282,6 @@
                     </div>
                   </div>
 
-                  <div class="mx-4">
-                    <nav aria-label="page navigation example">
-                      <ul class="pagination">
-                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                      </ul>
-                   </nav>
-                </div>
-            </div>
-                </div>
-                </div>
                 
                 
 
