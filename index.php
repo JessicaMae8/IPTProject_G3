@@ -77,6 +77,37 @@
     </nav>
   </div><!-- End Page Title -->
 
+  <head>
+    <title>Milktea I.M.S</title>
+    <style>
+        .btn-primary {
+            background-color:rgb(43, 130, 211) !important;
+            border-color:rgb(0, 0, 0) !important;
+        }
+        .btn-success {
+            background-color:rgb(40, 202, 83) !important;
+            border-color:rgb(0, 0, 0) !important;
+        }
+        .btn-danger {
+            background-color: rgb(223, 82, 71) !important;
+            border-color: rgb(0, 0, 0) !important;
+        }
+
+        .page-item.active .page-link {
+            background-color: #F0EAD2 !important;
+            border-color: #ffcc00 !important;
+            color: black !important;
+        }
+
+        .page-link {
+            background-color: #7F5539 !important;
+            border-color:rgb(10, 8, 0) !important;
+            color: #D7BE82 !important;
+        }
+    </style>
+</head>
+
+
   <section class="section">
     <div class="row">
       <div class="col-lg-12">
