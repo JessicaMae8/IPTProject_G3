@@ -348,7 +348,28 @@
                                 <option value="White Pearl">White Pearl</option>
                                 </select>
 
+                        <!-- Floaters -->
+                            <div class="mb-3">
+                              <label class="form-label">Floaters</label>
+                              <select class="form-control" id="Floaters" name="Floaters" required>
+                                <option value="Brown Sugar Crumble">Brown Sugar Crumble</option>
+                                <option value="Cheese Foam">Cheese Foam</option>
+                                <option value="Choco Chips">Choco Chips</option>
+                                <option value="Chocolate Drizzle">Chocolate Drizzle</option>
+                                <option value="Cinnamon Powder">Cinnamon Powder</option>
+                                <option value="Coconut Flakes">Coconut Flakes</option>
+                                <option value="Cream Cheese">Cream Cheese</option>
+                                <option value="Crushed Cookies">Crushed Cookies</option>
+                                <option value="Graham Crumbs">Graham Crumbs</option>
+                                <option value="Kreem Puff">Kreem Puff</option>
+                                <option value="Milo Powder">Milo Powder</option>
+                                <option value="Oreo Crumbs">Oreo Crumbs</option>
+                                <option value="Powdered Milk">Powdered Milk</option>
+                                <option value="Sprinkles">Sprinkles</option>
+                                <option value="Whipped Cream">Whipped Cream</option>
+                              </select>
                               </div>
+
                               <div class="mb-3">
                                 <label class="form-label">Sizes</label>
                                 <select class="form-control" id="Sizes" name="Sizes" required>
