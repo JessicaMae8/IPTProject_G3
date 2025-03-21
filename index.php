@@ -237,7 +237,6 @@
                                   <label class="form-label">Sinkers</label>
                                 <select class="form-control" id="Sinkers" name="Sinkers" required>
                                   <option value="" disabled selected>Choose Sinkers</option>
-                                  <option value="Aloe Vera">Aloe Vera</option>
                                   <option value="Basil Seeds">Basil Seeds</option>
                                   <option value="Boba Pearl">Boba Pearl</option>
                                   <option value="Chia Seeds">Chia Seeds</option>
@@ -245,7 +244,6 @@
                                   <option value="Coffee Jelly">Coffee Jelly</option>
                                   <option value="Crystal Boba">Crystal Boba</option>
                                   <option value="Fruit Jelly">Fruit Jelly</option>
-                                  <option value="Grass Jelly">Grass Jelly</option>
                                   <option value="Honey Boba">Honey Boba</option>
                                   <option value="Lychee Jelly">Lychee Jelly</option>
                                   <option value="Mango Jelly">Mango Jelly</option>
@@ -407,7 +405,6 @@
                                 <label class="form-label">Sinkers</label>
                                 <select class="form-control" id="Sinkers" name="Sinkers" required>
                                   <option value="" disabled selected>Choose Sinkers</option>
-                                  <option value="Aloe Vera">Aloe Vera</option>
                                   <option value="Basil Seeds">Basil Seeds</option>
                                   <option value="Boba Pearl">Boba Pearl</option>
                                   <option value="Chia Seeds">Chia Seeds</option>
@@ -415,7 +412,6 @@
                                   <option value="Coffee Jelly">Coffee Jelly</option>
                                   <option value="Crystal Boba">Crystal Boba</option>
                                   <option value="Fruit Jelly">Fruit Jelly</option>
-                                  <option value="Grass Jelly">Grass Jelly</option>
                                   <option value="Honey Boba">Honey Boba</option>
                                   <option value="Lychee Jelly">Lychee Jelly</option>
                                   <option value="Mango Jelly">Mango Jelly</option>
