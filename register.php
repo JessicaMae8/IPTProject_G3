@@ -55,7 +55,7 @@
                 </a>
               </div><!-- End Logo -->
 
-              <div class="card mb-3">
+              <div class="card mb-3" style= "background-color: #E3C0A1; padding: 20px; border-radius: 10px";>
     <div class="card-body">
         <div class="pt-6 pb-4">
             <h5 class="card-title text-center pb-0 fs-2">Create an Account</h5>
@@ -108,7 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="pt-6 pb-3 form-group">
             <label for="password">Password</label>
     <input type="password" name="password" id="password" class="form-control" placeholder="Password" required style="width: 100%; padding-right: 40px;">
-    <span onclick="togglePassword()" id="toggleIcon" style="position: absolute; right: 30px; top: 62%; transform: translateY(-50%); cursor: pointer; font-size: 1.2rem;">
+    <span onclick="togglePassword()" id="toggleIcon" style="position: absolute; right: 45px; top: 62%; transform: translateY(-50%); cursor: pointer; font-size: 1.2rem;">
         ✓ <!-- Checkmark icon for "visible" -->
     </span>
                 <div class="invalid-feedback">Please enter your password!</div>
@@ -124,7 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="col-12">
                 <button class="btn btn-primary w-100" type="submit">Create Account</button>
             </div>
-            <div class="pt-4 pb-3 col-12">
+            <div class="pt-2 col-12">
                 <p class="text-center medium">Already have an account? <a href="login.php">Log in</a></p>
             </div>
         </form>
