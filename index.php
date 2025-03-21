@@ -327,47 +327,26 @@
                               <div class="mb-3">
                                 <label class="form-label">Sinkers</label>
                                 <select class="form-control" id="Sinkers" name="Sinkers" required>
-                                <option value="Boba Pearl">Boba Pearl</option>
-                                <option value="Chia Seeds">Chia Seeds</option>
-                                <option value="Coconut Jelly">Coconut Jelly</option>
-                                <option value="Coffee Jelly">Coffee Jelly</option>
-                                <option value="Crystal Boba">Crystal Boba</option>
-                                <option value="Fruit Jelly">Fruit Jelly</option>
-                                <option value="Grass Jelly">Grass Jelly</option>
-                                <option value="Honey Boba">Honey Boba</option>
-                                <option value="Lychee Jelly">Lychee Jelly</option>
-                                <option value="Mango Jelly">Mango Jelly</option>
-                                <option value="Nata de coco">Nata de coco</option>
-                                <option value="Popping Boba">Popping Boba</option>
-                                <option value="Pudding">Pudding</option>
-                                <option value="Red Bean">Red Bean</option>
-                                <option value="Sago">Sago</option>
-                                <option value="Strawberry Jelly">Strawberry Jelly</option>
-                                <option value="Tapioca Pearl">Tapioca Pearl</option>
-                                <option value="Taro Balls">Taro Balls</option>
-                                <option value="White Pearl">White Pearl</option>
+                                  <option value="Boba Pearl">Boba Pearl</option>
+                                  <option value="Chia Seeds">Chia Seeds</option>
+                                  <option value="Coconut Jelly">Coconut Jelly</option>
+                                  <option value="Coffee Jelly">Coffee Jelly</option>
+                                  <option value="Crystal Boba">Crystal Boba</option>
+                                  <option value="Fruit Jelly">Fruit Jelly</option>
+                                  <option value="Grass Jelly">Grass Jelly</option>
+                                  <option value="Honey Boba">Honey Boba</option>
+                                  <option value="Lychee Jelly">Lychee Jelly</option>
+                                  <option value="Mango Jelly">Mango Jelly</option>
+                                  <option value="Nata De Coco">Nata De Coco</optio>
+                                  <option value="Popping Boba">Popping Boba</option>
+                                  <option value="Pudding">Pudding</option>
+                                  <option value="Red Bean">Red Bean</option>
+                                  <option value="Sago">Sago</option>
+                                  <option value="Strawberry Jelly">Strawberry Jelly</option>
+                                  <option value="Tapioca Pearl">Tapioca Pearl</option>
+                                  <option value="Taro Balls">Taro Balls</option>
+                                  <option value="White Pearl">White Pearl</option>
                                 </select>
-
-                        <!-- Floaters -->
-                            <div class="mb-3">
-                              <label class="form-label">Floaters</label>
-                              <select class="form-control" id="Floaters" name="Floaters" required>
-                                <option value="Brown Sugar Crumble">Brown Sugar Crumble</option>
-                                <option value="Cheese Foam">Cheese Foam</option>
-                                <option value="Choco Chips">Choco Chips</option>
-                                <option value="Chocolate Drizzle">Chocolate Drizzle</option>
-                                <option value="Cinnamon Powder">Cinnamon Powder</option>
-                                <option value="Coconut Flakes">Coconut Flakes</option>
-                                <option value="Cream Cheese">Cream Cheese</option>
-                                <option value="Crushed Cookies">Crushed Cookies</option>
-                                <option value="Graham Crumbs">Graham Crumbs</option>
-                                <option value="Kreem Puff">Kreem Puff</option>
-                                <option value="Milo Powder">Milo Powder</option>
-                                <option value="Oreo Crumbs">Oreo Crumbs</option>
-                                <option value="Powdered Milk">Powdered Milk</option>
-                                <option value="Sprinkles">Sprinkles</option>
-                                <option value="Whipped Cream">Whipped Cream</option>
-                              </select>
                               </div>
                               <div class="mb-3">
                                 <label class="form-label">Sizes</label>
