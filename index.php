@@ -322,31 +322,31 @@
                                      <option value="Vanilla">Vanilla</option>
                                      <option value="Wintermelon">Wintermelon</option>
                                    </select>
-
                               </div>
                               <div class="mb-3">
                                 <label class="form-label">Sinkers</label>
                                 <select class="form-control" id="Sinkers" name="Sinkers" required>
-                                <option value="Boba Pearl">Boba Pearl</option>
-                                <option value="Chia Seeds">Chia Seeds</option>
-                                <option value="Coconut Jelly">Coconut Jelly</option>
-                                <option value="Coffee Jelly">Coffee Jelly</option>
-                                <option value="Crystal Boba">Crystal Boba</option>
-                                <option value="Fruit Jelly">Fruit Jelly</option>
-                                <option value="Grass Jelly">Grass Jelly</option>
-                                <option value="Honey Boba">Honey Boba</option>
-                                <option value="Lychee Jelly">Lychee Jelly</option>
-                                <option value="Mango Jelly">Mango Jelly</option>
-                                <option value="Nata de coco">Nata de coco</option>
-                                <option value="Popping Boba">Popping Boba</option>
-                                <option value="Pudding">Pudding</option>
-                                <option value="Red Bean">Red Bean</option>
-                                <option value="Sago">Sago</option>
-                                <option value="Strawberry Jelly">Strawberry Jelly</option>
-                                <option value="Tapioca Pearl">Tapioca Pearl</option>
-                                <option value="Taro Balls">Taro Balls</option>
-                                <option value="White Pearl">White Pearl</option>
-                                </select>
+                                  <option value="" disabled selected>Choose Sinkers</option>
+                                  <option value="Boba Pearl">Boba Pearl</option>
+                                  <option value="Chia Seeds">Chia Seeds</option>
+                                  <option value="Coconut Jelly">Coconut Jelly</option>
+                                  <option value="Coffee Jelly">Coffee Jelly</option>
+                                  <option value="Crystal Boba">Crystal Boba</option>
+                                  <option value="Fruit Jelly">Fruit Jelly</option>
+                                  <option value="Grass Jelly">Grass Jelly</option>
+                                  <option value="Honey Boba">Honey Boba</option>
+                                  <option value="Lychee Jelly">Lychee Jelly</option>
+                                  <option value="Mango Jelly">Mango Jelly</option>
+                                  <option value="Nata De Coco">Nata De Coco</option>
+                                  <option value="Popping Boba">Popping Boba</option>
+                                  <option value="Pudding">Pudding</option>
+                                  <option value="Red Bean">Red Bean</option>
+                                  <option value="Sago">Sago</option>
+                                  <option value="Strawberry Jelly">Strawberry Jelly</option>
+                                  <option value="Tapioca Pearl">Tapioca Pearl</option>
+                                  <option value="Taro Balls">Taro Balls</option>
+                                  <option value="White Pearl">White Pearl</option>
+                                 </select>
 
                         <!-- Floaters -->
                             <div class="mb-3">
