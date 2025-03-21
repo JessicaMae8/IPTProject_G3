@@ -5,13 +5,16 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Login</title>
+  <title>Login - AppleZone PH</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+
   <!-- Favicons -->
-  <link href="assets\img\milktea logo.png" rel="icon">
-  <link href="assets\img\milktea logo.png" rel="Milktea Logo">
+  <link href="assets/img/apple1.png" rel="icon">
+  <link href="assets/img/apple1.png" rel="Logo icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -28,6 +31,9 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/log.css" rel="stylesheet">
+  
+  
 
   <!-- =======================================================
   * Template Name: NiceAdmin
@@ -38,7 +44,7 @@
   ======================================================== -->
 </head>
 
-<body>
+<body class="login" >
 
   <main>
     <div class="container">
@@ -50,65 +56,126 @@
 
               <div class="d-flex justify-content-center py-4">
                 <a href="index.html" class="logo d-flex align-items-center w-auto">
-                  <img src="assets\img\milktea logo.png" alt="">
-                  <span class="d-none d-lg-block">Milktea I.M.S</span>
+                  <img src="assets/img/apple1.png" alt="">
+                  <!--<span class="d-none d-lg-block">AppleZone Staff Log-in</span> -->
+                  <h5>AppleZone Staff Log-in</h5>
                 </a>
               </div><!-- End Logo -->
 
               <div class="card mb-3">
+    <div class="card-body">
+        <div class="pt-4 pb-2">
+            <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
+            <p class="text-center small">Enter your login credentials to proceed</p>
+        </div>
 
-                <div class="card-body">
+        <?php
+// Display success message if redirected after registration
+if (isset($_GET['message']) && $_GET['message'] == 'success') {
+    echo "<div style='color: green; text-align: center;'>Registration successful!<br> You can now log in.</div>";
+}
+?>
 
-                  <div class="pt-4 pb-2">
-                    <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
-                    <p class="text-center small">Enter your username & password to login</p>
-                  </div>
 
-                  <form class="row g-3 needs-validation" novalidate>
+        <?php
+include 'database/registry.php';
+session_start();
 
-                    <div class="col-12">
-                      <label for="yourUsername" class="form-label">Username</label>
-                      <div class="input-group has-validation">
-                        <span class="input-group-text" id="inputGroupPrepend">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
-                          <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
-                        </svg>
-                        </span>
-                        <input type="text" name="username" class="form-control" id="yourUsername" required>
-                        <div class="invalid-feedback">Please enter your username.</div>
-                      </div>
-                    </div>
+$error = ""; // Initialize an error message variable
 
-                    <div class="col-12">
-                      <label for="yourPassword" class="form-label">Password</label>
-                      <div class="input-group has-validation">
-                      <span class="input-group-text" id="inputGroupPrepend">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock" viewBox="0 0 16 16">
-                        <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2M5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1"/>
-                      </svg>
-                      </span>
-                      <input type="password" name="password" class="form-control" id="yourPassword" required>
-                      <div class="invalid-feedback">Please enter your password!</div>
-                    </div>
-                    </div>
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-                    <div class="col-12">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
-                        <label class="form-check-label" for="rememberMe">Remember me</label>
-                      </div>
-                    </div>
-                    <div class="col-12">
-                    <a href="index.php" button class="btn btn-primary w-100" type="submit">Login</button></a>
-                    </div>
-                    <div class="col-12">
-                      <p class="text-center medium">Don't have account? <a href="register.php">Create an account</a></p>
-                    </div>
-                  </form>
+    $sql = "SELECT * FROM registeredusers WHERE username='$username'";
+    $result = $conn->query($sql);
 
+    if ($result->num_rows > 0) {
+        $user = $result->fetch_assoc();
+        if (password_verify($password, $user['password'])) {
+            // Store user information in the session
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['username'] = $user['username'];
+            header("Location: index.php");
+            exit();
+        } else {
+            $error = "Invalid password."; // Set the error message
+        }
+    } else {
+        $error = "No user found with that username."; // Set the error message
+    }
+}
+?>
+<form class="login" novalidate method="POST" action="login.php">
+        <div class="col-12">
+    <label for="username" class="form-label">Username</label>
+    <div class="input-group">
+        <!-- User Icon -->
+        <span class="input-group-text"><i class="bi bi-person"></i></span>
+
+        <!-- Username Input Field -->
+        <input type="text" name="username" id="username" class="form-control" placeholder="Enter username" required>
+        
+        <div class="invalid-feedback">Please enter your username.</div>
+    </div>
+</div>
+
+<div class="col-12">
+    <label for="password" class="form-label">Password</label>
+    <div class="input-group">
+        <!-- Padlock Icon -->
+        <span class="input-group-text"><i class="bi bi-lock"></i></span>
+
+        <!-- Password Input Field -->
+        <input type="password" name="password" id="password" class="form-control" placeholder="Enter password" required minlength="8">
+
+        <!-- Eye Icon for Toggle -->
+        <span class="input-group-text" onclick="togglePassword()" style="cursor: pointer;">
+            <i id="toggleIcon" class="bi bi-eye"></i>
+        </span>
+
+        <div class="invalid-feedback">Password must be at least 8 characters long.</div>
+    </div>
+</div>
+
+
+
+            <div class="col-12 mb-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
+                    <label class="form-check-label" for="rememberMe">Remember me</label>
                 </div>
-              </div>
+            </div>
+            <div class="col-12 mb-3">
+                <button class="btn btn-primary w-100" type="submit">Login</button>
+            </div>
+            <div class="col-12 mb-3">
+                <p class="small mb-0">Don't have an account? <a href="register.php">Create an account</a></p>
+            </div>
+        </form>
+    </div>
+</div>
 
+<!-- Display Error Messages -->
+<?php if (!empty($error)): ?>
+    <div style="color: red;"><?php echo $error; ?></div>
+<?php endif; ?>
+
+<script>
+function togglePassword() {
+    const passwordInput = document.getElementById("password");
+    const toggleIcon = document.getElementById("toggleIcon");
+
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        toggleIcon.classList.replace("bi-eye", "bi-eye-slash");
+    } else {
+        passwordInput.type = "password";
+        toggleIcon.classList.replace("bi-eye-slash", "bi-eye");
+    }
+}
+
+</script>
               <div class="credits">
                 <!-- All the links in the footer should remain intact. -->
                 <!-- You can delete the links only if you purchased the pro version. -->

@@ -105,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
             </div>
 
-            <div style="pt-6 pb-3 position: relative; width: 100%;">
+            <div class="pt-6 pb-3 form-group">
             <label for="password">Password</label>
     <input type="password" name="password" id="password" class="form-control" placeholder="Password" required style="width: 100%; padding-right: 40px;">
     <span onclick="togglePassword()" id="toggleIcon" style="position: absolute; right: 30px; top: 62%; transform: translateY(-50%); cursor: pointer; font-size: 1.2rem;">
