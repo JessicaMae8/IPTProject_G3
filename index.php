@@ -192,22 +192,98 @@
                               <form action="database/update.php" method="POST">
                                 <div class="modal-body">
                                   <input type="hidden" name="id" value="<?php echo $row['ID']; ?>">
+                                  
                                   <div class="mb-3">
-                                    <label class="form-label">Flavors</label>
-                                    <input type="text" name="Flavors" class="form-control" value="<?php echo $row['Flavors']; ?>" required>
-                                  </div>
+                                  <label class="form-label">Flavors</label>
+                                  <select class="form-control" id="Flavors" name="Flavors" required>
+                                     <option value="" disabled selected>What's your Flavor?</option>
+                                     <option value="Avocado">Avocado</option>
+                                     <option value="Banana">Banana</option>
+                                     <option value="Black Forest">Black Forest</option>
+                                     <option value="Blueberry">Blueberry</option>
+                                     <option value="Brown Sugar">Brown Sugar</option>
+                                     <option value="Buko Pandan">Buko Pandan</option>
+                                     <option value="Caramel">Caramel</option>
+                                     <option value="Cheesecake">Cheesecake</option>
+                                     <option value="Choco Fudge">Choco Fudge</option>
+                                     <option value="Choco Mint">Choco Mint</option>
+                                     <option value="Cookies and Cream">Cookies and Cream</option>
+                                     <option value="Dark Choco">Dark Choco</option>
+                                     <option value="Hokkaido">Hokkaido</option>
+                                     <option value="Lavender">Lavender</option>
+                                     <option value="Mango">Mango</option>
+                                     <option value="Matcha">Matcha</option>
+                                     <option value="Melon">Melon</option>
+                                     <option value="Mocha">Mocha</option>
+                                     <option value="Okinawa">Okinawa</option>
+                                     <option value="Oreo">Oreo</option>
+                                     <option value="Oreo Cheesecake">Oreo Cheesecake</option>
+                                     <option value="Peach">Peach</option>
+                                     <option value="Red Velvet">Red Velvet</option>
+                                     <option value="Rocky Road">Rocky Road</option>
+                                     <option value="Rose">Rose</option>
+                                     <option value="Salted Caramel">Salted Caramel</option>
+                                     <option value="Strawberry">Strawberry</option>
+                                     <option value="Taro">Taro</option>
+                                     <option value="Thai">Thai</option>
+                                     <option value="Ube">Ube</option>
+                                     <option value="Vanilla">Vanilla</option>
+                                     <option value="Wintermelon">Wintermelon</option>
+                                   </select>
+                              </div>
+
+
                                   <div class="mb-3">
-                                    <label class="form-label">Sinkers</label>
-                                    <input type="text" name="Sinkers" class="form-control" value="<?php echo $row['Sinkers']; ?>" required>
-                                  </div>
+                                  <label class="form-label">Sinkers</label>
+                                <select class="form-control" id="Sinkers" name="Sinkers" required>
+                                  <option value="" disabled selected>Choose Sinkers</option>
+                                  <option value="Aloe Vera">Aloe Vera</option>
+                                  <option value="Basil Seeds">Basil Seeds</option>
+                                  <option value="Boba Pearl">Boba Pearl</option>
+                                  <option value="Chia Seeds">Chia Seeds</option>
+                                  <option value="Coconut Jelly">Coconut Jelly</option>
+                                  <option value="Coffee Jelly">Coffee Jelly</option>
+                                  <option value="Crystal Boba">Crystal Boba</option>
+                                  <option value="Fruit Jelly">Fruit Jelly</option>
+                                  <option value="Grass Jelly">Grass Jelly</option>
+                                  <option value="Honey Boba">Honey Boba</option>
+                                  <option value="Lychee Jelly">Lychee Jelly</option>
+                                  <option value="Mango Jelly">Mango Jelly</option>
+                                  <option value="Nata De Coco">Nata De Coco</option>
+                                  <option value="Popping Boba">Popping Boba</option>
+                                  <option value="Pudding">Pudding</option>
+                                  <option value="Red Bean">Red Bean</option>
+                                  <option value="Sago">Sago</option>
+                                  <option value="Strawberry Jelly">Strawberry Jelly</option>
+                                  <option value="Tapioca Pearl">Tapioca Pearl</option>
+                                  <option value="Taro Balls">Taro Balls</option>
+                                  <option value="White Pearl">White Pearl</option>
+                                 </select>
+                                </div>
+
+                                
                                   <div class="mb-3">
-                                    <label class="form-label">Sizes</label>
-                                    <input type="text" name="Sizes" class="form-control" value="<?php echo $row['Sizes']; ?>" required>
-                                  </div>
+                                  <label class="form-label">Sizes</label>
+                                  <select class="form-control" id="Sizes" name="Sizes" required>
+                                 <option value="" disabled selected>Preferred Size</option>
+                                 <option value="Small">Small</option>
+                                 <option value="Medium">Medium</option>
+                                 <option value="Large">Large</option>
+                                </select>
+                                </div>
+
+
                                   <div class="mb-3">
-                                    <label class="form-label">Price</label>
-                                    <input type="int" name="Price" class="form-control" value="<?php echo $row['Price']; ?>" required>
+                                  <label class="form-label">Price</label>
+                                   <select class="form-control" id="Price" name="Price" required>
+                                 <option value="" disabled selected>Price List</option>
+                                 <option value="29">29</option>
+                                 <option value="39">39</option>
+                                 <option value="49">49</option>
+                                </select>
                                   </div>
+
+                                  
                                 </div>
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -304,6 +380,7 @@
                                      <option value="Cookies and Cream">Cookies and Cream</option>
                                      <option value="Dark Choco">Dark Choco</option>
                                      <option value="Hokkaido">Hokkaido</option>
+                                     <option value="Lavender">Lavender</option>
                                      <option value="Mango">Mango</option>
                                      <option value="Matcha">Matcha</option>
                                      <option value="Melon">Melon</option>
@@ -314,6 +391,7 @@
                                      <option value="Peach">Peach</option>
                                      <option value="Red Velvet">Red Velvet</option>
                                      <option value="Rocky Road">Rocky Road</option>
+                                     <option value="Rose">Rose</option>
                                      <option value="Salted Caramel">Salted Caramel</option>
                                      <option value="Strawberry">Strawberry</option>
                                      <option value="Taro">Taro</option>
@@ -323,10 +401,14 @@
                                      <option value="Wintermelon">Wintermelon</option>
                                    </select>
                               </div>
+
+                               <!-- Sinkers -->
                               <div class="mb-3">
                                 <label class="form-label">Sinkers</label>
                                 <select class="form-control" id="Sinkers" name="Sinkers" required>
                                   <option value="" disabled selected>Choose Sinkers</option>
+                                  <option value="Aloe Vera">Aloe Vera</option>
+                                  <option value="Basil Seeds">Basil Seeds</option>
                                   <option value="Boba Pearl">Boba Pearl</option>
                                   <option value="Chia Seeds">Chia Seeds</option>
                                   <option value="Coconut Jelly">Coconut Jelly</option>
@@ -347,6 +429,7 @@
                                   <option value="Taro Balls">Taro Balls</option>
                                   <option value="White Pearl">White Pearl</option>
                                  </select>
+                                </div>
 
                         <!-- Floaters -->
                             <div class="mb-3">
@@ -370,23 +453,25 @@
                               </select>
                               </div>
 
+                        <!-- Sizes -->
                               <div class="mb-3">
                                 <label class="form-label">Sizes</label>
                                 <select class="form-control" id="Sizes" name="Sizes" required>
-                                <option value="Small">Small</option>
-                                <option value="Medium">Medium</option>
-                                <option value="Large">Large</option>
+                                 <option value="" disabled selected>Preferred Size</option>
+                                 <option value="Small">Small</option>
+                                 <option value="Medium">Medium</option>
+                                 <option value="Large">Large</option>
                                 </select>
 
-
+                        <!-- Prices -->
                               </div>
                               <div class="mb-3">
                                 <label class="form-label">Price</label>
                                 <select class="form-control" id="Price" name="Price" required>
-                                <option value="29">29</option>
-                                <option value="39">39</option>
-                                <option value="49">49</option>
-
+                                 <option value="" disabled selected>Price List</option>
+                                 <option value="29">29</option>
+                                 <option value="39">39</option>
+                                 <option value="49">49</option>
                                 </select>
 
                               </div>
