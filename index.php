@@ -232,7 +232,7 @@
                                    </select>
                               </div>
 
-
+                        <!-- Sinkers -->
                                   <div class="mb-3">
                                   <label class="form-label">Sinkers</label>
                                 <select class="form-control" id="Sinkers" name="Sinkers" required>
@@ -261,7 +261,7 @@
                                  </select>
                                 </div>
 
-                                
+                        <!-- Sizes -->
                                   <div class="mb-3">
                                   <label class="form-label">Sizes</label>
                                   <select class="form-control" id="Sizes" name="Sizes" required>
@@ -272,7 +272,7 @@
                                 </select>
                                 </div>
 
-
+                        <!-- Prices -->
                                   <div class="mb-3">
                                   <label class="form-label">Price</label>
                                    <select class="form-control" id="Price" name="Price" required>
