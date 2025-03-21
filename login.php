@@ -61,7 +61,7 @@
                 </a>
               </div><!-- End Logo -->
 
-              <div class="card mb-3">
+              <div class="card mb-3" style= "background-color: #E3C0A1; padding: 20px; border-radius: 10px";>
     <div class="card-body">
         <div class="pt-4 pb-2">
             <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
