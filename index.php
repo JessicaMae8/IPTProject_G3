@@ -256,7 +256,7 @@
                                   <option value="Tapioca Pearl">Tapioca Pearl</option>
                                   <option value="Taro Balls">Taro Balls</option>
                                   <option value="White Pearl">White Pearl</option>
-                                 </select>
+                                </select>
                                 </div>
 
                         <!-- Sizes -->
@@ -398,7 +398,7 @@
                                      <option value="Vanilla">Vanilla</option>
                                      <option value="Wintermelon">Wintermelon</option>
                                    </select>
-                              </div>
+                                </div>
 
                                <!-- Sinkers -->
                               <div class="mb-3">
@@ -416,6 +416,11 @@
                                   <option value="Lychee Jelly">Lychee Jelly</option>
                                   <option value="Mango Jelly">Mango Jelly</option>
                                   <option value="Nata De Coco">Nata De Coco</option>
+                                  <option value="Grass Jelly">Grass Jelly</option>
+                                  <option value="Honey Boba">Honey Boba</option>
+                                  <option value="Lychee Jelly">Lychee Jelly</option>
+                                  <option value="Mango Jelly">Mango Jelly</option>
+                                  <option value="Nata De Coco">Nata De Coco</optio>
                                   <option value="Popping Boba">Popping Boba</option>
                                   <option value="Pudding">Pudding</option>
                                   <option value="Red Bean">Red Bean</option>
@@ -448,6 +453,15 @@
                                  <option value="49">49</option>
                                 </select>
 
+                                </select>
+                              </div>
+                              <div class="mb-3">
+                                <label class="form-label">Sizes</label>
+                                <input type="text" name="Sizes" id="Sizes" class="form-control" placeholder="Enter Sizes"required>
+                              </div>
+                              <div class="mb-3">
+                                <label class="form-label">Price</label>
+                                <input type="int" name="Price" id="Price" class="form-control" placeholder="Enter Price"required>
                               </div>
                             </div>
                             <div class="modal-footer">
