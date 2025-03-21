@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Login - AppleZone PH</title>
+  <title>Login</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -13,8 +13,8 @@
 
 
   <!-- Favicons -->
-  <link href="assets/img/apple1.png" rel="icon">
-  <link href="assets/img/apple1.png" rel="Logo icon">
+  <link href="assets/img/milktea logo.png" rel="icon">
+  <link href="assets/img/milktea logo.png" rel="Miktea Logo icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -55,10 +55,10 @@
             <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
               <div class="d-flex justify-content-center py-4">
-                <a href="index.html" class="logo d-flex align-items-center w-auto">
-                  <img src="assets/img/apple1.png" alt="">
-                  <!--<span class="d-none d-lg-block">AppleZone Staff Log-in</span> -->
-                  <h5>AppleZone Staff Log-in</h5>
+                <a class="logo d-flex align-items-center w-auto">
+                  <img src="assets/img/milktea logo.png" alt="Milktea Logo">
+                  <!--<span class="d-none d-lg-block">Login</span> -->
+                  <h5>Milktea I.M.S</h5>
                 </a>
               </div><!-- End Logo -->
 
@@ -66,13 +66,13 @@
     <div class="card-body">
         <div class="pt-4 pb-2">
             <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
-            <p class="text-center small">Enter your login credentials to proceed</p>
+            <p class="text-center small">Access your account by entering your login credentials.</p>
         </div>
 
         <?php
 // Display success message if redirected after registration
 if (isset($_GET['message']) && $_GET['message'] == 'success') {
-    echo "<div style='color: green; text-align: center;'>Registration successful!<br> You can now log in.</div>";
+    echo "<div style='color: green; text-align: center;'>Success!<br>Your account has been created. Please log in.</div>";
 }
 ?>
 
@@ -102,12 +102,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $error = "Invalid password."; // Set the error message
         }
     } else {
-        $error = "No user found with that username."; // Set the error message
+        $error = "Oops! Username not found. Please try again."; // Set the error message
     }
 }
 ?>
 <form class="login" novalidate method="POST" action="login.php">
-        <div class="col-12">
+        <div class="pt-2 pb-2 col-12">
     <label for="username" class="form-label">Username</label>
     <div class="input-group">
         <!-- User Icon -->
@@ -120,7 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 </div>
 
-<div class="col-12">
+<div class="pt-2 pb-2 col-12">
     <label for="password" class="form-label">Password</label>
     <div class="input-group">
         <!-- Padlock Icon -->
@@ -140,17 +140,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-            <div class="col-12 mb-3">
+            <div class="pt-2 col-12 mb-3">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
-                    <label class="form-check-label" for="rememberMe">Remember me</label>
+                    <label class="text-center small form-check-label" for="rememberMe">Remember me</label>
                 </div>
             </div>
             <div class="col-12 mb-3">
                 <button class="btn btn-primary w-100" type="submit">Login</button>
             </div>
             <div class="col-12 mb-3">
-                <p class="small mb-0">Don't have an account? <a href="register.php">Create an account</a></p>
+                <p class="text-center small">Don't have an account? <a href="register.php">Create an account</a></p>
             </div>
         </form>
     </div>
