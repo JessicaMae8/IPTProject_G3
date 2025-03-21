@@ -290,6 +290,7 @@
                               <div class="mb-3">
                                   <label class="form-label">Flavors</label>
                                   <select class="form-control" id="Flavors" name="Flavors" required>
+                                    <option value="" disabled selected>What's your Flavor?</option>
                                     <option value="Avocado">Avocado</option>
                                     <option value="Banana">Banana</option>
                                     <option value="Black Forest">Black Forest</option>
@@ -321,12 +322,11 @@
                                     <option value="Vanilla">Vanilla</option>
                                     <option value="Wintermelon">Wintermelon</option>
                                   </select>
-
-
                               </div>
                               <div class="mb-3">
                                 <label class="form-label">Sinkers</label>
                                 <select class="form-control" id="Sinkers" name="Sinkers" required>
+                                  <option value="" disabled selected>Choose Sinkers</option>
                                   <option value="Boba Pearl">Boba Pearl</option>
                                   <option value="Chia Seeds">Chia Seeds</option>
                                   <option value="Coconut Jelly">Coconut Jelly</option>
