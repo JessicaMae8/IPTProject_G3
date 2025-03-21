@@ -148,11 +148,11 @@
                             <!-- View Modal -->
                             <div class="modal fade" id="ViewModal<?php echo $row['ID']; ?>" tabindex="-1" aria-labelledby="ViewModalLabel" aria-hidden="true">
                               <div class="modal-dialog">
-                                <div class="modal-content">
-                                  <div class="modal-header">
-                                    <h5 class="modal-title">View Milktea Details</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                  </div>
+                                <div class="modal-content" style="background-color: #BE986D">
+                                <div class="modal-header" style="background-color: #e8d3bd; padding: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                                  <span style="font-size: 20px; font-weight: bold; color: #5a4635;">View Milktea Details</span>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
                                   <div class="modal-body">
                                   <div class="mb-3">
                                     <label class="form-label">Flavors</label>
@@ -184,11 +184,11 @@
                         <!-- Edit Modal -->
                         <div class="modal fade" id="editModal<?php echo $row['ID']; ?>" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
                           <div class="modal-dialog">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <h5 class="modal-title">Edit Milktea List</h5>
+                            <div class="modal-content" style="background-color: #BE986D">
+                            <div class="modal-header" style="background-color: #e8d3bd; padding: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                                <span style="font-size: 20px; font-weight: bold; color: #5a4635;">Edit Milktea List</span>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                              </div>
+                            </div>
                               <form action="database/update.php" method="POST">
                                 <div class="modal-body">
                                   <input type="hidden" name="id" value="<?php echo $row['ID']; ?>">
@@ -284,7 +284,7 @@
                                   
                                 </div>
                                 <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: #6c757d; color: white; border-color: black; padding: 8px 16px; border-radius: 5px;">Close</button>
                                   <button type="submit" class="btn btn-primary">Update</button>
                                 </div>
                               </form>
@@ -299,8 +299,8 @@
                         <!-- Delete Modal -->
                         <div class="modal fade" id="deleteModal<?php echo $row['ID']; ?>" data-bs-backdrop="static" tabindex="-1" aria-labelledby="deleteLabel" aria-hidden="true">
                           <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                              <div class="modal-body text-center">
+                            <div class="modal-content" >
+                              <div class="modal-body text-center" >
                                 <h1 class="text-danger" style="font-size: 50px"><strong>!</strong></h1>
                                 <h5>Are you sure you want to delete this?</h5>
                                 <h6>This action cannot be undone.</h6>
@@ -308,7 +308,7 @@
                               <div class="modal-footer d-flex justify-content-center">
                                 <form action="database/delete.php" method="POST">
                                   <input type="hidden" name="id" value="<?php echo $row['ID']; ?>">
-                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: #6c757d; color: white; border-color: black; padding: 8px 16px; border-radius: 5px;">Cancel</button>
                                   <button type="submit" class="btn btn-danger">Yes, Delete</button>
                                 </form>
                               </div>
@@ -352,13 +352,13 @@
 </main><!-- End #main -->
 
                         <!-- Create (Add Flavors) Modal -->
-                        <div class="modal fade" id="addFlavorsModal" tabindex="-1" aria-labelledby="addFlavorsLabel" aria-hidden="true">
-                          <div class="modal-dialog">
+                        <div class="modal fade" id="addFlavorsModal" tabindex="-1" aria-labelledby="addFlavorsLabel" aria-hidden="true" >
+                          <div class=" modal-dialog">
                             <form action="database/create.php" method="POST">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h5 class="modal-title">Add Milktea Order</h5>
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              <div class="modal-content" style="background-color: #BE986D">
+                              <div class="modal-header" style="background-color: #e8d3bd; padding: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                                <span style="font-size: 20px; font-weight: bold; color: #5a4635;">Add Milktea Order</span>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                               </div>
                               <div class="modal-body">
                               <div class="mb-3">
@@ -452,21 +452,11 @@
                                  <option value="39">39</option>
                                  <option value="49">49</option>
                                 </select>
-
-                                </select>
-                              </div>
-                              <div class="mb-3">
-                                <label class="form-label">Sizes</label>
-                                <input type="text" name="Sizes" id="Sizes" class="form-control" placeholder="Enter Sizes"required>
-                              </div>
-                              <div class="mb-3">
-                                <label class="form-label">Price</label>
-                                <input type="int" name="Price" id="Price" class="form-control" placeholder="Enter Price"required>
                               </div>
                             </div>
                             <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                              <button type="submit" class="btn btn-primary">Add Flavors</button>
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: #6c757d; color: white; border-color: black; padding: 8px 16px; border-radius: 5px;">Close</button>
+                              <button type="submit" class="btn btn-primary" style="background-color: #007bff; color: white; border-color: black; padding: 8px 16px; border-radius: 5px;">Add Flavors</button>
                             </div>
                           </div>
                       </form>

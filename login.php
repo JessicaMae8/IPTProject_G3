@@ -57,8 +57,7 @@
               <div class="d-flex justify-content-center py-4">
                 <a class="logo d-flex align-items-center w-auto">
                   <img src="assets/img/milktea logo.png" alt="Milktea Logo">
-                  <!--<span class="d-none d-lg-block">Login</span> -->
-                  <h5>Milktea I.M.S</h5>
+                  <span class="d-none d-lg-block">Milktea I.M.S</span>
                 </a>
               </div><!-- End Logo -->
 
